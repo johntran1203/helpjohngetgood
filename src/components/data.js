@@ -4,27 +4,27 @@ export const links = [
   {
     id: 1,
     url: '/',
-    text: 'random',
+    text: 'Home',
   },
   {
     id: 2,
     url: '/about',
-    text: 'about',
+    text: 'About',
   },
   {
     id: 3,
-    url: '/projects',
-    text: 'projects',
+    url: '/contact',
+    text: 'Contact',
   },
   {
     id: 4,
-    url: '/contact',
-    text: 'contact',
+    url: '/table',
+    text: 'Table',
   },
   {
     id: 5,
-    url: '/profile',
-    text: 'profile',
+    url: '/pictures',
+    text: 'pictures',
   },
 ]
 
