@@ -14,6 +14,7 @@ export const AppContext = createContext()
 
 function App() {
   const [userName, setUserName] = useState("john")
+  const [loading, setLoading] = useState(true)
   
   return (
     <div className="App">
