@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link } from "react-router-dom";
 import { links, social } from "./data";
 import { FaBars } from 'react-icons/fa';
 
@@ -20,7 +19,7 @@ const Nav = () => {
       linksContainerRef.current.style.height = '0px';
     }
   }, [showLinks]);
-  
+
   return (
     <nav>
       <div className="nav-center">

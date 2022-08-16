@@ -9,12 +9,16 @@ import Navbar from './components/Navbar';
 import ErrorPage from './components/ErrorPage';
 import About from './components/About';
 import Notes from './components/Notes';
+import Info from './components/Info';
+import { definition } from './components/data';
 
 export const AppContext = createContext()
 
 function App() {
   const [userName, setUserName] = useState("john")
   const [loading, setLoading] = useState(true)
+  const [infos, setInfos] = useState(definition);
+  console.log(infos)
   
   return (
     <div className="App">
@@ -26,6 +30,9 @@ function App() {
           <Route path='/table' element={<Table />}/>
           <Route path='/contact' element={<Contact  />}/>
           <Route path='/about' element={<About />}/>
+          <Route path='/info' element={infos.map((info)=>{
+            return (<Info key={info.id} {...info}/>)
+          })}/>
           <Route path="*" element={<ErrorPage />}/>
         </Routes>
       </Router>
