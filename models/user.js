@@ -1,13 +1,15 @@
+//create a schema
+
+//import from mongoose
 const { Schema, model } = require('mongoose')
 
-new userSchema(
-    {
-        name: {type: String, required: true},
-        location: {type: String, required: true},
-        urls: {type: String, required: true}
-    },
-    
-    {timestamps: true}
+const user = new Schema(
+  {
+    name: { type: String, required:true },
+    location: { type: String, required:true },
+    url: { type: String, required:true }
+  },
+  { timestamps: true }
 )
 
-module.exports = model('User', userSchema)
+module.exports = model('User', user);

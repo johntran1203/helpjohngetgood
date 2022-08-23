@@ -1,10 +1,11 @@
 const db = require("../db");
-const Book = require("../models/book");
-const Publisher = require("../models/publisher");
+const Book = require("../models/books");
+const User = require("../models/user");
 
 const seedBooks = async () => {
-  const penguinBooks = await Publisher.find({ name: "Penguin Books" });
-  const harperCollins = await Publisher.find({ name: "HarperCollins" });
+  const penguinBooks = await User.find({ name: "Penguin Books" });
+  const harperCollins = await User.find({ name: "HarperCollins" });
+
 
   const books = [
     //Insert many books into our db
@@ -12,7 +13,7 @@ const seedBooks = async () => {
       title: "The Wind Up Bird Chronicle",
       author: "Haruki Murakami",
       publish_date: "1997",
-      publisher_id: penguinBooks[0]._id,
+      publisher_id: penguinBooks[0]._id, //the object_id of a publisher
     },
     {
       title: "Zen and the Art of Motorcycle Maintenance",
