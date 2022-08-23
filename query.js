@@ -1,6 +1,6 @@
 const db = require('./db');
-const Publisher = require('./models/publisher');
-const Book = require('./models/book')
+const User = require('./models/user');
+const Book = require('./models/books')
 
 const findBook = async () => {
   const book = Book.findOne({ title: 'The Wind Up Bird Chronicle' })
@@ -8,7 +8,7 @@ const findBook = async () => {
 }
 
 const createBook = async () => {
-  const penguinBooks = await Publisher.find({name: 'Penguin Books'})
+  const penguinBooks = await User.find({name: 'Penguin Books'})
   console.log("penguin books", penguinBooks)
   const aNewEarth = new Book({
     title: 'A New Earth',
@@ -33,10 +33,10 @@ const deleteBook = async () => {
 
 const run = async () => {
   // We must await each of these functions so that the whole task can finish before closing the database connection.
-  await findBook()
+  // await findBook()
   await createBook()
-  await updateBook()
-  await deleteBook()
+  // await updateBook()
+  // await deleteBook()
   db.close()
 }
 
